@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <resources>
-    <string name="app_name">NFCTron App</string>
+    <string name="app_name">NFCtron</string>
     <string name="search_hint">Search cryptocurrencies...</string>
     <string name="error_loading">Error loading data</string>
     <string name="price_format">$ %.2f</string>
     <string name="market_cap">Market Cap</string>
-    <string name="price_change_24h">24h Change</string>
+    <string name="price_change">24h Change: %s</string>
     <string name="favorite">Favorite</string>
     <string name="favorites">Favorites</string>
     <string name="back">Back</string>
