@@ -1,11 +1,11 @@
-rootProject.name = "nfctron_app"
-include(":androidApp")
+rootProject.name = "NFCtron"
+include(":app")
 include(":shared")
 
 pluginManagement {
     repositories {
-        gradlePluginPortal()
         google()
+        gradlePluginPortal()
         mavenCentral()
     }
 }
