@@ -1,3 +1,6 @@
+package com.nfctron.cryptoapp.model
+
+import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
@@ -5,11 +8,13 @@ data class CryptoCurrency(
     val id: String,
     val symbol: String,
     val name: String,
+    @SerialName("current_price")
     val currentPrice: Double,
-    val priceChangePercentage24h: Double,
-    val marketCap: Double,
-    val isFavorite: Boolean = false,
-    val sparklineIn7d: SparklineData? = null
+    @SerialName("price_change_24h")
+    val priceChange24h: Double,
+    @SerialName("image")
+    val imageUrl: String,
+    val isFavorite: Boolean = false
 ) {
     fun formattedPrice(): String {
         return when {
@@ -20,6 +25,6 @@ data class CryptoCurrency(
     }
 
     fun formattedPriceChange(): String {
-        return "%+.2f%%".format(priceChangePercentage24h)
+        return "%+.2f%%".format(priceChange24h)
     }
 } 
