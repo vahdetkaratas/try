@@ -5,15 +5,15 @@
 5    android:versionName="1.0" >
 6
 7    <uses-sdk
-8        android:minSdkVersion="24"
+8        android:minSdkVersion="26"
 9        android:targetSdkVersion="34" />
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->C:\Users\KARA\Documents\GitHub\try\app\src\main\AndroidManifest.xml:5:5-67
-11-->C:\Users\KARA\Documents\GitHub\try\app\src\main\AndroidManifest.xml:5:22-64
+11-->C:\Users\KARA\AndroidStudioProjects\nfctronapp\app\src\main\AndroidManifest.xml:5:5-67
+11-->C:\Users\KARA\AndroidStudioProjects\nfctronapp\app\src\main\AndroidManifest.xml:5:22-64
 12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-12-->C:\Users\KARA\Documents\GitHub\try\app\src\main\AndroidManifest.xml:6:5-79
-12-->C:\Users\KARA\Documents\GitHub\try\app\src\main\AndroidManifest.xml:6:22-76
+12-->C:\Users\KARA\AndroidStudioProjects\nfctronapp\app\src\main\AndroidManifest.xml:6:5-79
+12-->C:\Users\KARA\AndroidStudioProjects\nfctronapp\app\src\main\AndroidManifest.xml:6:22-76
 13
 14    <permission
 14-->[androidx.core:core:1.10.0] C:\Users\KARA\.gradle\caches\8.9\transforms\dc00b0fbb92ba351c91684bbc0405d9d\transformed\core-1.10.0\AndroidManifest.xml:22:5-24:47
@@ -27,47 +27,47 @@
 18-->[androidx.core:core:1.10.0] C:\Users\KARA\.gradle\caches\8.9\transforms\dc00b0fbb92ba351c91684bbc0405d9d\transformed\core-1.10.0\AndroidManifest.xml:26:22-94
 19
 20    <application
-20-->C:\Users\KARA\Documents\GitHub\try\app\src\main\AndroidManifest.xml:8:5-29:19
+20-->C:\Users\KARA\AndroidStudioProjects\nfctronapp\app\src\main\AndroidManifest.xml:8:5-29:19
 21        android:name="com.nfctron.app.NFCtronApp"
-21-->C:\Users\KARA\Documents\GitHub\try\app\src\main\AndroidManifest.xml:9:9-35
+21-->C:\Users\KARA\AndroidStudioProjects\nfctronapp\app\src\main\AndroidManifest.xml:9:9-35
 22        android:allowBackup="true"
-22-->C:\Users\KARA\Documents\GitHub\try\app\src\main\AndroidManifest.xml:10:9-35
+22-->C:\Users\KARA\AndroidStudioProjects\nfctronapp\app\src\main\AndroidManifest.xml:10:9-35
 23        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 23-->[androidx.core:core:1.10.0] C:\Users\KARA\.gradle\caches\8.9\transforms\dc00b0fbb92ba351c91684bbc0405d9d\transformed\core-1.10.0\AndroidManifest.xml:28:18-86
 24        android:dataExtractionRules="@xml/data_extraction_rules"
-24-->C:\Users\KARA\Documents\GitHub\try\app\src\main\AndroidManifest.xml:11:9-65
+24-->C:\Users\KARA\AndroidStudioProjects\nfctronapp\app\src\main\AndroidManifest.xml:11:9-65
 25        android:debuggable="true"
 26        android:extractNativeLibs="false"
 27        android:fullBackupContent="@xml/backup_rules"
-27-->C:\Users\KARA\Documents\GitHub\try\app\src\main\AndroidManifest.xml:12:9-54
+27-->C:\Users\KARA\AndroidStudioProjects\nfctronapp\app\src\main\AndroidManifest.xml:12:9-54
 28        android:icon="@mipmap/ic_launcher"
-28-->C:\Users\KARA\Documents\GitHub\try\app\src\main\AndroidManifest.xml:13:9-43
+28-->C:\Users\KARA\AndroidStudioProjects\nfctronapp\app\src\main\AndroidManifest.xml:13:9-43
 29        android:label="@string/app_name"
-29-->C:\Users\KARA\Documents\GitHub\try\app\src\main\AndroidManifest.xml:14:9-41
+29-->C:\Users\KARA\AndroidStudioProjects\nfctronapp\app\src\main\AndroidManifest.xml:14:9-41
 30        android:roundIcon="@mipmap/ic_launcher_round"
-30-->C:\Users\KARA\Documents\GitHub\try\app\src\main\AndroidManifest.xml:15:9-54
+30-->C:\Users\KARA\AndroidStudioProjects\nfctronapp\app\src\main\AndroidManifest.xml:15:9-54
 31        android:supportsRtl="true"
-31-->C:\Users\KARA\Documents\GitHub\try\app\src\main\AndroidManifest.xml:16:9-35
+31-->C:\Users\KARA\AndroidStudioProjects\nfctronapp\app\src\main\AndroidManifest.xml:16:9-35
 32        android:testOnly="true"
 33        android:theme="@style/Theme.Material3.Light.NoActionBar" >
-33-->C:\Users\KARA\Documents\GitHub\try\app\src\main\AndroidManifest.xml:17:9-65
+33-->C:\Users\KARA\AndroidStudioProjects\nfctronapp\app\src\main\AndroidManifest.xml:17:9-65
 34        <activity
-34-->C:\Users\KARA\Documents\GitHub\try\app\src\main\AndroidManifest.xml:20:9-28:20
+34-->C:\Users\KARA\AndroidStudioProjects\nfctronapp\app\src\main\AndroidManifest.xml:20:9-28:20
 35            android:name="com.nfctron.app.MainActivity"
-35-->C:\Users\KARA\Documents\GitHub\try\app\src\main\AndroidManifest.xml:21:13-41
+35-->C:\Users\KARA\AndroidStudioProjects\nfctronapp\app\src\main\AndroidManifest.xml:21:13-41
 36            android:exported="true"
-36-->C:\Users\KARA\Documents\GitHub\try\app\src\main\AndroidManifest.xml:22:13-36
+36-->C:\Users\KARA\AndroidStudioProjects\nfctronapp\app\src\main\AndroidManifest.xml:22:13-36
 37            android:theme="@style/Theme.Material3.Light.NoActionBar" >
-37-->C:\Users\KARA\Documents\GitHub\try\app\src\main\AndroidManifest.xml:23:13-69
+37-->C:\Users\KARA\AndroidStudioProjects\nfctronapp\app\src\main\AndroidManifest.xml:23:13-69
 38            <intent-filter>
-38-->C:\Users\KARA\Documents\GitHub\try\app\src\main\AndroidManifest.xml:24:13-27:29
+38-->C:\Users\KARA\AndroidStudioProjects\nfctronapp\app\src\main\AndroidManifest.xml:24:13-27:29
 39                <action android:name="android.intent.action.MAIN" />
-39-->C:\Users\KARA\Documents\GitHub\try\app\src\main\AndroidManifest.xml:25:17-69
-39-->C:\Users\KARA\Documents\GitHub\try\app\src\main\AndroidManifest.xml:25:25-66
+39-->C:\Users\KARA\AndroidStudioProjects\nfctronapp\app\src\main\AndroidManifest.xml:25:17-69
+39-->C:\Users\KARA\AndroidStudioProjects\nfctronapp\app\src\main\AndroidManifest.xml:25:25-66
 40
 41                <category android:name="android.intent.category.LAUNCHER" />
-41-->C:\Users\KARA\Documents\GitHub\try\app\src\main\AndroidManifest.xml:26:17-77
-41-->C:\Users\KARA\Documents\GitHub\try\app\src\main\AndroidManifest.xml:26:27-74
+41-->C:\Users\KARA\AndroidStudioProjects\nfctronapp\app\src\main\AndroidManifest.xml:26:17-77
+41-->C:\Users\KARA\AndroidStudioProjects\nfctronapp\app\src\main\AndroidManifest.xml:26:27-74
 42            </intent-filter>
 43        </activity>
 44        <activity

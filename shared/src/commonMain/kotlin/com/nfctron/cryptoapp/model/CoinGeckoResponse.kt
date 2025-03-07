@@ -19,13 +19,4 @@ data class CoinGeckoResponse(
 @Serializable
 data class SparklineData(
     val price: List<Double>
-)
-
-fun CoinGeckoResponse.toCryptoCurrency() = CryptoCurrency(
-    id = id,
-    symbol = symbol,
-    name = name,
-    currentPrice = currentPrice,
-    priceChangePercentage24h = priceChange24h,
-    marketCap = 0.0 // Assuming marketCap is not provided in the new API response
 ) 

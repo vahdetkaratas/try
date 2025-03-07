@@ -1,0 +1,11 @@
+com.nfctron.shared-sqlite-framework-2.3.1-0 C:\Users\KARA\.gradle\caches\8.9\transforms\973e0c3c7a115f2092fa9c2029b8f8a7\transformed\sqlite-framework-2.3.1\res
+com.nfctron.shared-sqlite-2.3.1-1 C:\Users\KARA\.gradle\caches\8.9\transforms\c516f06b201dd30a0bddfbc79bfdfcc5\transformed\sqlite-2.3.1\res
+com.nfctron.shared-pngs-2 C:\Users\KARA\AndroidStudioProjects\nfctronapp\shared\build\generated\res\pngs\release
+com.nfctron.shared-resValues-3 C:\Users\KARA\AndroidStudioProjects\nfctronapp\shared\build\generated\res\resValues\release
+com.nfctron.shared-mergeReleaseResources-4 C:\Users\KARA\AndroidStudioProjects\nfctronapp\shared\build\intermediates\incremental\release\mergeReleaseResources\merged.dir
+com.nfctron.shared-mergeReleaseResources-5 C:\Users\KARA\AndroidStudioProjects\nfctronapp\shared\build\intermediates\incremental\release\mergeReleaseResources\stripped.dir
+com.nfctron.shared-merged_res-6 C:\Users\KARA\AndroidStudioProjects\nfctronapp\shared\build\intermediates\merged_res\release
+com.nfctron.shared-androidMain-7 C:\Users\KARA\AndroidStudioProjects\nfctronapp\shared\src\androidMain\res
+com.nfctron.shared-androidRelease-8 C:\Users\KARA\AndroidStudioProjects\nfctronapp\shared\src\androidRelease\res
+com.nfctron.shared-main-9 C:\Users\KARA\AndroidStudioProjects\nfctronapp\shared\src\main\res
+com.nfctron.shared-release-10 C:\Users\KARA\AndroidStudioProjects\nfctronapp\shared\src\release\res

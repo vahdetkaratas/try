@@ -1,0 +1,20 @@
+C:\Users\KARA\AndroidStudioProjects\nfctronapp\shared\build.gradle.kts:66: Warning: Use version catalog instead [UseTomlInstead]
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\KARA\AndroidStudioProjects\nfctronapp\shared\build.gradle.kts:67: Warning: Use version catalog instead [UseTomlInstead]
+                implementation("io.mockk:mockk:1.13.8")
+                                ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\KARA\AndroidStudioProjects\nfctronapp\shared\build.gradle.kts:74: Warning: Use the existing version catalog reference (libs.junit) instead [UseTomlInstead]
+                implementation("junit:junit:4.13.2")
+                                ~~~~~~~~~~~~~~~~~~
+C:\Users\KARA\AndroidStudioProjects\nfctronapp\shared\build.gradle.kts:75: Warning: Use version catalog instead [UseTomlInstead]
+                implementation("io.mockk:mockk-android:1.13.8")
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "UseTomlInstead":
+   If your project is using a libs.versions.toml file, you should place all
+   Gradle dependencies in the TOML file. This lint check looks for version
+   declarations outside of the TOML file and suggests moving them (and in the
+   IDE, provides a quickfix to performing the operation automatically).
+
+0 errors, 4 warnings

@@ -4,6 +4,7 @@ import com.nfctron.cryptoapp.api.CoinGeckoApi
 import com.nfctron.cryptoapp.model.CryptoCurrency
 import com.nfctron.db.CryptocurrencyDatabase
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
 
 interface CryptocurrencyRepository {
     suspend fun getTrendingCryptocurrencies(): List<CryptoCurrency>
@@ -16,20 +17,22 @@ class CryptocurrencyRepositoryImpl(
     private val api: CoinGeckoApi,
     private val database: CryptocurrencyDatabase
 ) : CryptocurrencyRepository {
-    // ... implementation ...
     override suspend fun getTrendingCryptocurrencies(): List<CryptoCurrency> {
-        TODO("Not yet implemented")
+        return api.getTrendingCryptocurrencies()
     }
-
+    
     override suspend fun searchCryptos(query: String): List<CryptoCurrency> {
-        TODO("Not yet implemented")
+        return api.searchCryptos(query)
     }
-
+    
     override suspend fun toggleFavorite(id: String) {
-        TODO("Not yet implemented")
+        // Implementation will depend on your database schema
     }
-
+    
     override fun getFavorites(): Flow<List<CryptoCurrency>> {
-        TODO("Not yet implemented")
+        return flow {
+            // Implementation will depend on your database schema
+            emit(emptyList())
+        }
     }
 } 

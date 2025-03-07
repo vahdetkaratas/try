@@ -25,4 +25,4 @@ fun CryptoCurrency.toEntity(): Cryptocurrency {
         image_url = imageUrl,
         is_favorite = if (isFavorite) 1L else 0L
     )
-}
+} 

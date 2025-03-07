@@ -1,10 +1,22 @@
+package com.nfctron.cryptoapp.repository
+
+import com.nfctron.cryptoapp.api.CoinGeckoApi
+import com.nfctron.cryptoapp.model.CryptoCurrency
+import com.nfctron.db.CryptocurrencyDatabase
+import io.mockk.coEvery
+import io.mockk.coVerify
+import io.mockk.mockk
+import kotlin.test.Test
+import kotlin.test.assertEquals
+import kotlinx.coroutines.test.runTest
+
 class CryptoRepositoryTest {
     private val api = mockk<CoinGeckoApi>()
-    private val database = mockk<CryptoDatabase>()
-    private val repository = CryptoRepository(api, database)
+    private val database = mockk<CryptocurrencyDatabase>()
+    private val repository = CryptocurrencyRepositoryImpl(api, database)
 
     @Test
-    fun `getTrendingCryptos returns data from API when force refresh is true`() = runTest {
+    fun `getTrendingCryptocurrencies returns data from API`() = runTest {
         // Given
         val cryptos = listOf(
             CryptoCurrency(
@@ -12,17 +24,18 @@ class CryptoRepositoryTest {
                 symbol = "btc",
                 name = "Bitcoin",
                 currentPrice = 50000.0,
-                priceChangePercentage24h = 5.0,
-                marketCap = 1000000000.0
+                priceChange24h = 5.0,
+                imageUrl = "https://example.com/btc.png",
+                isFavorite = false
             )
         )
-        coEvery { api.getTrendingCryptos() } returns cryptos
+        coEvery { api.getTrendingCryptocurrencies() } returns cryptos
 
         // When
-        val result = repository.getTrendingCryptos(forceRefresh = true)
+        val result = repository.getTrendingCryptocurrencies()
 
         // Then
         assertEquals(cryptos, result)
-        coVerify { api.getTrendingCryptos() }
+        coVerify { api.getTrendingCryptocurrencies() }
     }
 } 

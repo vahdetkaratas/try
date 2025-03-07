@@ -10,19 +10,8 @@ plugins {
 // No dependencies here
 
 buildscript {
-    repositories {
-        gradlePluginPortal()
-        google()
-        mavenCentral()
-    }
+    // Dependencies for the build script itself
     dependencies {
         classpath("app.cash.sqldelight:gradle-plugin:2.0.0")
-    }
-}
-
-allprojects {
-    repositories {
-        google()
-        mavenCentral()
     }
 }

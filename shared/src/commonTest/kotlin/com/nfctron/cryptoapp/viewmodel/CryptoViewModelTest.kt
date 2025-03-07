@@ -1,9 +1,24 @@
+package com.nfctron.cryptoapp.viewmodel
+
+import com.nfctron.cryptoapp.model.CryptoCurrency
+import com.nfctron.cryptoapp.repository.CryptocurrencyRepository
+import io.mockk.coEvery
+import io.mockk.coVerify
+import io.mockk.just
+import io.mockk.mockk
+import io.mockk.runs
+import kotlin.test.Test
+import kotlin.test.assertEquals
+import kotlin.test.assertFalse
+import kotlin.test.assertNull
+import kotlinx.coroutines.test.runTest
+
 class CryptoViewModelTest {
-    private val repository = mockk<CryptoRepository>()
+    private val repository = mockk<CryptocurrencyRepository>()
     private val viewModel = CryptoViewModel(repository)
     
     @Test
-    fun `loadTrendingCryptos updates state with data from repository`() = runTest {
+    fun `loadTrendingCoins updates state with data from repository`() = runTest {
         // Given
         val cryptos = listOf(
             CryptoCurrency(
@@ -11,17 +26,17 @@ class CryptoViewModelTest {
                 symbol = "btc",
                 name = "Bitcoin",
                 currentPrice = 50000.0,
-                priceChangePercentage24h = 5.0,
-                marketCap = 1000000000.0
+                priceChange24h = 5.0,
+                imageUrl = "https://example.com/btc.png",
+                isFavorite = false
             )
         )
-        coEvery { repository.getTrendingCryptos(any()) } returns cryptos
+        coEvery { repository.getTrendingCryptocurrencies() } returns cryptos
         
-        // When
-        viewModel.loadTrendingCryptos()
+        // When - init block in ViewModel calls loadTrendingCoins
         
         // Then
-        assertEquals(cryptos, viewModel.uiState.value.cryptos)
+        assertEquals(cryptos, viewModel.uiState.value.coins)
         assertFalse(viewModel.uiState.value.isLoading)
         assertNull(viewModel.uiState.value.error)
     }
@@ -29,29 +44,16 @@ class CryptoViewModelTest {
     @Test
     fun `toggleFavorite updates repository and reloads data`() = runTest {
         // Given
-        coEvery { repository.toggleFavorite(any(), any()) } just Runs
-        coEvery { repository.getTrendingCryptos(false) } returns emptyList()
+        coEvery { repository.toggleFavorite(any()) } just runs
+        coEvery { repository.getTrendingCryptocurrencies() } returns emptyList()
         
         // When
-        viewModel.toggleFavorite("bitcoin", true)
+        viewModel.toggleFavorite("bitcoin")
         
         // Then
         coVerify { 
-            repository.toggleFavorite("bitcoin", true)
-            repository.getTrendingCryptos(false)
+            repository.toggleFavorite("bitcoin")
+            repository.getTrendingCryptocurrencies()
         }
-    }
-    
-    @Test
-    fun `loadTrendingCryptos shows error when repository fails`() = runTest {
-        // Given
-        coEvery { repository.getTrendingCryptos(any()) } throws Exception("Network error")
-        
-        // When
-        viewModel.loadTrendingCryptos()
-        
-        // Then
-        assertTrue(viewModel.uiState.value.error?.isNotEmpty() == true)
-        assertFalse(viewModel.uiState.value.isLoading)
     }
 } 

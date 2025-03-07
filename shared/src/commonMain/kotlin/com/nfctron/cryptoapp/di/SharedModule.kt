@@ -6,7 +6,6 @@ import com.nfctron.cryptoapp.api.createHttpClient
 import com.nfctron.cryptoapp.repository.CryptocurrencyRepository
 import com.nfctron.cryptoapp.repository.CryptocurrencyRepositoryImpl
 import com.nfctron.db.CryptocurrencyDatabase
-import com.nfctron.shared.repository.CryptocurrencyRepository
 import io.ktor.client.HttpClient
 import org.koin.dsl.module
 
@@ -16,7 +15,4 @@ fun sharedModule() = module {
     single { DatabaseDriverFactory(get()).createDriver() }
     single { CryptocurrencyDatabase(get()) }
     single<CryptocurrencyRepository> { CryptocurrencyRepositoryImpl(get(), get()) }
-}
-
-expect fun createDatabase(context: Any): CryptoDatabase
-expect fun createHttpClient(): HttpClient 
+} 

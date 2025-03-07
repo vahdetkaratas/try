@@ -24,8 +24,10 @@ fun SearchBar(
             .padding(16.dp),
         placeholder = { Text("Search cryptocurrencies...") },
         leadingIcon = { Icon(Icons.Default.Search, contentDescription = "Search") },
-        colors = TextFieldDefaults.textFieldColors(
-            containerColor = MaterialTheme.colorScheme.surface
+        colors = TextFieldDefaults.colors(
+            focusedContainerColor = MaterialTheme.colorScheme.surface,
+            unfocusedContainerColor = MaterialTheme.colorScheme.surface,
+            disabledContainerColor = MaterialTheme.colorScheme.surface,
         )
     )
 } 

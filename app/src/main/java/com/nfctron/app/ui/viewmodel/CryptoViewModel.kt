@@ -2,8 +2,8 @@ package com.nfctron.app.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.nfctron.shared.domain.models.Cryptocurrency
-import com.nfctron.shared.repository.CryptocurrencyRepository
+import com.nfctron.cryptoapp.model.CryptoCurrency
+import com.nfctron.cryptoapp.repository.CryptocurrencyRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 data class CryptoUiState(
-    val coins: List<Cryptocurrency> = emptyList(),
+    val coins: List<CryptoCurrency> = emptyList(),
     val isLoading: Boolean = true,
     val error: String? = null,
     val searchQuery: String = ""
@@ -30,13 +30,12 @@ class CryptoViewModel(
     private fun loadTrendingCoins() {
         viewModelScope.launch {
             try {
-                repository.getTrendingCoins().collect { coins ->
-                    _uiState.update { it.copy(
-                        coins = coins,
-                        isLoading = false,
-                        error = null
-                    ) }
-                }
+                val coins = repository.getTrendingCryptocurrencies()
+                _uiState.update { it.copy(
+                    coins = coins,
+                    isLoading = false,
+                    error = null
+                ) }
             } catch (e: Exception) {
                 _uiState.update { it.copy(
                     isLoading = false,
@@ -52,9 +51,8 @@ class CryptoViewModel(
     }
 
     fun toggleFavorite(coinId: String) {
-        val coin = _uiState.value.coins.find { it.id == coinId } ?: return
         viewModelScope.launch {
-            repository.toggleFavorite(coinId, !coin.isFavorite)
+            repository.toggleFavorite(coinId)
             loadTrendingCoins() // Reload to reflect changes
         }
     }

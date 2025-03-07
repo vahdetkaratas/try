@@ -1,9 +1,9 @@
 package com.nfctron.cryptoapp.api
 
-import com.nfctron.cryptoapp.model.CoinGeckoResponse
 import com.nfctron.cryptoapp.model.CryptoCurrency
+import com.nfctron.cryptoapp.model.CoinGeckoResponse
 import com.nfctron.cryptoapp.model.SearchResponse
-import com.nfctron.cryptoapp.model.toCryptocurrency
+import com.nfctron.cryptoapp.model.toCryptoCurrency
 import io.ktor.client.*
 import io.ktor.client.call.*
 import io.ktor.client.request.*
@@ -29,7 +29,7 @@ class CoinGeckoApiImpl(
                 parameters.append("page", "1")
                 parameters.append("sparkline", "false")
             }
-        }.body<List<CoinGeckoResponse>>().map { it.toCryptocurrency() }
+        }.body<List<CoinGeckoResponse>>().map { it.toCryptoCurrency() }
     }
 
     override suspend fun searchCryptos(query: String): List<CryptoCurrency> {
@@ -65,6 +65,6 @@ class CoinGeckoApiImpl(
                 parameters.append("developer_data", "false")
                 parameters.append("sparkline", "false")
             }
-        }.body<CoinGeckoResponse>().toCryptocurrency()
+        }.body<CoinGeckoResponse>().toCryptoCurrency()
     }
 } 

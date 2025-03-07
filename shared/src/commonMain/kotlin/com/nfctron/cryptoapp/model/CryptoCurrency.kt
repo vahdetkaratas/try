@@ -6,13 +6,10 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class CryptoCurrency(
     val id: String,
-    val symbol: String,
     val name: String,
-    @SerialName("current_price")
+    val symbol: String,
     val currentPrice: Double,
-    @SerialName("price_change_24h")
     val priceChange24h: Double,
-    @SerialName("image")
     val imageUrl: String,
     val isFavorite: Boolean = false
 ) {

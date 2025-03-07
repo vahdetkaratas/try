@@ -1,6 +1,6 @@
 package com.nfctron.cryptoapp.model
 
-fun CoinGeckoResponse.toCryptocurrency(): CryptoCurrency {
+fun CoinGeckoResponse.toCryptoCurrency(): CryptoCurrency {
     return CryptoCurrency(
         id = id,
         symbol = symbol,

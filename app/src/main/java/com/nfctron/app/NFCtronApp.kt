@@ -2,7 +2,7 @@ package com.nfctron.app
 
 import android.app.Application
 import com.nfctron.app.di.appModule
-import com.nfctron.shared.di.sharedModule
+import com.nfctron.cryptoapp.di.sharedModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
@@ -12,7 +12,7 @@ class NFCtronApp : Application() {
         
         startKoin {
             androidContext(this@NFCtronApp)
-            modules(appModule + sharedModule)
+            modules(appModule + sharedModule())
         }
     }
 } 

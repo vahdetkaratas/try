@@ -10,11 +10,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import com.nfctron.shared.domain.models.Cryptocurrency
+import com.nfctron.cryptoapp.model.CryptoCurrency
 
 @Composable
 fun CryptoListItem(
-    cryptocurrency: Cryptocurrency,
+    cryptocurrency: CryptoCurrency,
     onFavoriteClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
@@ -37,12 +37,12 @@ fun CryptoListItem(
                     style = MaterialTheme.typography.titleMedium
                 )
                 Text(
-                    text = "$${cryptocurrency.currentPrice}",
+                    text = "$${cryptocurrency.formattedPrice()}",
                     style = MaterialTheme.typography.bodyMedium
                 )
                 Text(
-                    text = "${cryptocurrency.priceChangePercentage24h}%",
-                    color = if (cryptocurrency.priceChangePercentage24h >= 0) 
+                    text = cryptocurrency.formattedPriceChange(),
+                    color = if (cryptocurrency.priceChange24h >= 0) 
                         Color.Green else Color.Red,
                     style = MaterialTheme.typography.bodySmall
                 )
